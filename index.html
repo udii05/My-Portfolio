@@ -1,407 +1,208 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Udita Chakraborty | Computer Science Student</title>
-    <link rel="stylesheet" href="style.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-    />
-  </head>
-  <body>
-    <!-- Navigation -->
-    <nav class="navbar">
-      <div class="nav-container">
-        <div class="nav-logo">
-          <span>SM</span>
-        </div>
-        <ul class="nav-menu">
-          <li><a href="#home" class="nav-link">Home</a></li>
-          <li><a href="#about" class="nav-link">About</a></li>
-          <li><a href="#skills" class="nav-link">Skills</a></li>
-          <li><a href="#projects" class="nav-link">Projects</a></li>
-          <li><a href="#experience" class="nav-link">Experience</a></li>
-          <li><a href="#contact" class="nav-link">Contact</a></li>
-        </ul>
-        <div class="hamburger">
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
-      </div>
-    </nav>
+// Mobile Navigation toggle
+const hamburger = document.querySelector(".hamburger");
+const navMenu = document.querySelector(".nav-menu");
 
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-      <div class="hero-container">
-        <div class="hero-content">
-          <h1 class="hero-greeting">**Hello, it's me**</h1>
-          <h2 class="hero-name">Udita Chakraborty</h2>
-          <div class="hero-description">
-            <p>
-              CSE student with hands on experience building ML Models,
-              AI Agents and DevOps pipelines. Actively exploring open
-              source contributions and focused on building clean, scalable
-              and well-engineered solutions.
-            </p>
-          </div>
-          <div class="scroll-indicator">
-            <span>SCROLL FOR MORE</span>
-            <div class="scroll-arrow">↓</div>
-          </div>
-        </div>
-        <div class="hero-info">
-          <h3 class="hero-title">MY PORTFOLIO</h3>
-          <div class="hero-actions">
-            <button class="btn-primary" onclick="downloadResume()">
-              <i class="fas fa-download"></i> DOWNLOAD CV
-            </button>
-            <a href="#contact" class="btn-secondary">HIRE ME</a>
-          </div>
-        </div>
-      </div>
-    </section>
+hamburger.addEventListener("click", () => {
+  hamburger.classList.toggle("active");
+  navMenu.classList.toggle("active");
+});
 
-    <!-- About Section -->
-    <section id="about" class="about">
-      <div class="container">
-        <div class="section-header">
-          <h2>**MY SKILLSET**</h2>
-          <h3>Passionate CSE student building Agentic AI solutions</h3>
-        </div>
-        <div class="about-content">
-          <div class="about-text">
-            <p>
-              Computer Science student with hands-on experience building machine learning
-              solutions and AI agents through academic and personal projects. I enjoy
-              experimenting with intelligent systems, evaluating model performance, and
-              translating ideas into working implementations while following clean and
-              maintainable coding practices. My interests also include DevOps fundamentals
-              such as containerization and CI/CD workflows.
-            </p>
+// Close menu when clicking a link
+document.querySelectorAll(".nav-link").forEach((n) =>
+  n.addEventListener("click", () => {
+    hamburger.classList.remove("active");
+    navMenu.classList.remove("active");
+  })
+);
 
-            <p>
-              Through my projects, I have explored end-to-end ML pipelines, agent-based
-              reasoning systems, and practical experimentation with cloud-native tools.
-              I actively seek opportunities to improve my problem-solving and analytical
-              skills, and I learn continuously by building and studying real-world systems.
-            </p>
+// Smooth Scrolling
+document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+  anchor.addEventListener("click", function (e) {
+    e.preventDefault();
+    const target = document.querySelector(this.getAttribute("href"));
+    if (target) {
+      const offsetTop = target.offsetTop - 80;
+      window.scrollTo({ top: offsetTop, behavior: "smooth" });
+    }
+  });
+});
 
-            <p>
-              Currently pursuing my B.Tech in Computer Science with a specialization in AIML,
-              I am focused on deepening my understanding of machine learning, AI agents, and
-              scalable system design. I am enthusiastic about contributing to open source
-              projects, strengthening my foundations through consistent practice, and growing
-              into a well-rounded software professional.
-            </p>
-          </div>
-          <div class="contact-info">
-            <div class="contact-item">
-              <i class="fas fa-phone"></i>
-              <span>+91 7019655864</span>
-            </div>
-            <div class="contact-item">
-              <i class="fas fa-envelope"></i>
-              <span>udita.chakraborty05@gmail.com</span>
-            </div>
-            <div class="contact-item">
-              <i class="fas fa-map-marker-alt"></i>
-              <span>Bangalore, India</span>
-            </div>
-            <div class="contact-item">
-              <i class="fab fa-linkedin"></i>
-              <a
-                href="https://www.linkedin.com/in/udita-chakraborty-b890982a2/"
-                target="_blank"
-                >linkedin.com/in/udita-chakraborty-b890982a2</a
-              >
-            </div>
-            <div class="contact-item">
-              <i class="fas fa-code"></i>
-              <a href="https://leetcode.com/u/udii05/" target="_blank"
-                >leetcode.com/udii05</a
-              >
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+// Active Link Highlight on Scroll
+window.addEventListener("scroll", () => {
+  let current = "";
+  const sections = document.querySelectorAll("section");
 
-    <!-- Skills Section -->
-    <section id="skills" class="skills">
-      <div class="container">
-        <div class="skills-grid">
-          <div class="skill-category">
-            <h3>Languages</h3>
-            <ul>
-              <li>Python</li>
-              <li>C++</li>
-              <li>Basic JAVA</li>
-              <li>HTML, CSS</li>
-            </ul>
-          </div>
-          <div class="skill-category">
-            <h3>Libraries</h3>
-            <ul>
-              <li>NumPy, Matplotlib</li>
-              <li>Streamlit</li>
-              <li>Scikit-learn</li>
-              <li>LangChain, LangGraph</li>
-            </ul>
-          </div>
-          <div class="skill-category">
-            <h3>Frameworks</h3>
-            <ul>
-              <li>TensorFlow</li>
-              <li>Keras</li>
-              <li>PyTorch</li>
-              <li>Django</li>
-            </ul>
-          </div>
-          <div class="skill-category">
-            <h3>Tools and Platforms</h3>
-            <ul>
-              <li>VS Code</li>
-              <li>LeetCode</li>
-              <li>Docker</li>
-              <li>Git, GitHub</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
+  sections.forEach((sec) => {
+    if (pageYOffset >= sec.offsetTop - 200) {
+      current = sec.id;
+    }
+  });
 
-    <!-- Projects Section -->
-    <section id="projects" class="projects">
-      <div class="container">
-        <h2 class="section-title">Recent Projects</h2>
-        <div class="projects-grid">
-          <div class="project-card">
-            <div class="project-info">
-              <h3>ColorFlux - DevOps Deployment System</h3>
-              <p class="tech-stack">
-                Docker, Kubernetes, Helm
-              </p>
-              <ul>
-                <li>Designed backend REST APIs for credit request workflows</li>
-                <li>Implemented layered architecture with Hibernate ORM</li>
-                <li>
-                  Configured custom exception handling and unified error
-                  responses
-                </li>
-                <li>Enabled role-based access using Spring Security</li>
-                <li>Optimized SQL queries for improved performance</li>
-              </ul>
-            </div>
-          </div>
-          <div class="project-card">
-            <div class="project-info">
-              <h3>CineFinds - Movie Recommendation System</h3>
-              <p class="tech-stack">
-                Pandas, Streamlit, Django, Scikit-learn
-              </p>
-              <ul>
-                <li>Developed RESTful APIs to monitor system faults</li>
-                <li>Enhanced code performance and modularity</li>
-                <li>Implemented critical failure logging system</li>
-                <li>
-                  Supported full project lifecycle from development to
-                  deployment
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div class="project-card">
-            <div class="project-info">
-              <h3>RealityCheck.AI - Fact Checking System</h3>
-              <p class="tech-stack">
-                LLM, Streamlit, GPT-4 APIs, Fact-checking Alogrithms
-              </p>
-              <ul>
-                <li>Built production-ready APIs for employee management</li>
-                <li>Implemented pagination, sorting, and filtering features</li>
-                <li>Used @ControllerAdvice and Hibernate Validator</li>
-                <li>Comprehensive testing with JUnit and Mockito</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-        <div class="github-link">
-          <a href="https://github.com/udii05" class="btn-github"
-            >MY GITHUB</a
-          >
-        </div>
-      </div>
-    </section>
+  document.querySelectorAll(".nav-link").forEach((link) => {
+    link.classList.remove("active");
+    if (link.getAttribute("href").slice(1) === current) {
+      link.classList.add("active");
+    }
+  });
+});
 
-    <!-- Experience Section -->
-    <section id="experience" class="experience">
-      <div class="container">
-        <div class="experience-grid">
-          <div class="experience-column">
-            <h2>Career</h2>
-            <div class="timeline">
-              <div class="timeline-item">
-                <h4>Associate Consultant</h4>
-                <h5>Infosys Limited</h5>
-                <span class="period">Jan 2025 - Present</span>
-                <p>
-                  Spring Security, Microservices, Docker training and
-                  implementation
-                </p>
-              </div>
-              <div class="timeline-item">
-                <h4>Software Engineer</h4>
-                <h5>Pinelabs Private Limited</h5>
-                <span class="period">Sep 2024 - Jan 2025</span>
-                <p>
-                  PGP encryption, API optimization, mentoring junior developers
-                </p>
-              </div>
-              <div class="timeline-item">
-                <h4>Associate Software Engineer</h4>
-                <h5>Rakuten Symphony</h5>
-                <span class="period">Jul 2022 - Mar 2024</span>
-                <p>
-                  RESTful API design, microservices architecture, CI/CD
-                  pipelines
-                </p>
-              </div>
-              <div class="timeline-item">
-                <h4>Java Developer Intern</h4>
-                <h5>Crystaltech Services</h5>
-                <span class="period">Dec 2021 - May 2022</span>
-                <p>Backend development, testing, code quality improvement</p>
-              </div>
-            </div>
-          </div>
-          <div class="experience-column">
-            <h2>Education</h2>
-            <div class="timeline">
-              <div class="timeline-item">
-                <h4>Master of Computer Application</h4>
-                <h5>NRI Institute of Information Science and Technology</h5>
-                <span class="period">Jul 2020 - May 2022</span>
-                <p>CGPA: 8.00 • Bhopal, Madhya Pradesh</p>
-              </div>
-              <div class="timeline-item">
-                <h4>Bachelor of Science (Computer Science)</h4>
-                <h5>Govt. Nirbhay Singh Patel Science College</h5>
-                <span class="period">Jul 2015 - Apr 2018</span>
-                <p>60% • Indore, Madhya Pradesh</p>
-              </div>
-            </div>
-            <div class="certifications">
-              <h3>Certifications & Achievements</h3>
-              <ul>
-                <li>Spring and Hibernate for Beginners - Udemy</li>
-                <li>Linux Certificate - Udemy</li>
-                <li>AIR-1086 in NIMCET 2019</li>
-                <li>Active problem solver on LeetCode platform</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+// Navbar Background Change on Scroll
+window.addEventListener("scroll", () => {
+  const navbar = document.querySelector(".navbar");
+  navbar.style.background =
+    window.scrollY > 50
+      ? "rgba(10,10,10,0.98)"
+      : "rgba(10,10,10,0.95)";
+});
 
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
-      <div class="container">
-        <div class="contact-content">
-          <div class="contact-info-section">
-            <h2>**ABOUT ME**</h2>
-            <h3>Developing with passion for Problem Solving and Open Source Contribution</h3>
-            <div class="contact-details">
-              <div class="contact-item">
-                <i class="fas fa-phone"></i>
-                <span>+91 7019655864</span>
-              </div>
-              <div class="contact-description">
-                <p>
-                  I’m deeply passionate about building intelligent systems
-                  that are practical, scalable, and genuinely useful. My work
-                  spans machine learning models, AI agents, DevOps workflows,
-                  and cloud-ready applications — all driven by curiosity and
-                  a desire to create things that make an impact.
-                </p>
+// Resume Download (LOCAL ASSET)
+function downloadResume(event) {
+  const button = event.target;
+  const originalText = button.innerHTML;
 
-                <p>
-                  Over time, I have focused on sharpening my fundamentals through
-                  consistent Data Structures & Algorithms practice on LeetCode
-                  and by contributing to open-source projects on GitHub whenever
-                  I can. These experiences have helped me create impactful work.
-                </p>
+  // show loading
+  button.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Downloading...';
+  button.disabled = true;
 
-                <p>
-                  I love to learn by experimenting, from ML models to automation
-                  using DevOps tools and Agentic AI. Whether it's designing AI
-                  agents, or deploying models, I enjoy exploring how different
-                  technologies come together to solve real-world problems.
-                </p>
+  // local resume in assets/
+  const resumePath = "assets/Udita Chakraborty Resume.pdf";
 
-                <p>
-                  I am committed to continuous learning, clean implementation,
-                  and building projects that reflect creativity, technical skills,
-                  and a strong drive to grow and create impactful work.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="cta-section">
-          <h2>**What's Next**</h2>
-          <h3>Let's Work Together!</h3>
-          <p>
-            Ready to build something impactful? Let's discuss how we can
-            create something amazing together. I'm always excited about new
-            challenges and opportunities to grow.
-          </p>
-          <a href="mailto:udita.chakraborty05@gmail.com" class="btn-email"
-            >WRITE ME AN EMAIL</a
-          >
-        </div>
-      </div>
-    </section>
+  const link = document.createElement("a");
+  link.href = resumePath;
+  link.download = "Soumi_Resume.pdf";
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
 
-    <!-- Footer -->
-    <footer class="footer">
-      <div class="container">
-        <div class="footer-content">
-          <p>&copy; 2026 Udita Chakraborty. All rights reserved.</p>
-          <div class="social-links">
-            <a
-              href="https://www.linkedin.com/in/udita-chakraborty-b890982a2/"
-              target="_blank"
-              title="LinkedIn"
-              ><i class="fab fa-linkedin"></i
-            ></a>
-            <a
-              href="https://leetcode.com/u/udii05"
-              target="_blank"
-              title="LeetCode"
-              ><i class="fas fa-code"></i
-            ></a>
-            <a href="mailto:udita.chakraborty05@gmail.com" title="Email"
-              ><i class="fas fa-envelope"></i
-            ></a>
-            <a href="tel:+917019655864" title="Phone"
-              ><i class="fas fa-phone"></i
-            ></a>
-          </div>
-        </div>
-      </div>
-    </footer>
+  // reset button
+  setTimeout(() => {
+    button.innerHTML = originalText;
+    button.disabled = false;
+  }, 1500);
 
-    <!-- Scripts -->
-    <script src="script.js"></script>
-  </body>
-</html>
+  showNotification("Resume download started!", "success");
+}
+
+// Notifications
+function showNotification(message, type = "info") {
+  const notification = document.createElement("div");
+  notification.className = `notification notification-${type}`;
+  notification.innerHTML = `
+    <div class="notification-content">
+      <i class="fas ${type === "success" ? "fa-check-circle" : "fa-info-circle"}"></i>
+      <span>${message}</span>
+    </div>
+  `;
+
+  document.body.appendChild(notification);
+
+  setTimeout(() => notification.classList.add("show"), 100);
+
+  // hide after 4s
+  setTimeout(() => {
+    notification.classList.remove("show");
+    setTimeout(() => notification.remove(), 300);
+  }, 4000);
+}
+
+// Fade-in Animations
+const observer = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.style.opacity = "1";
+        entry.target.style.transform = "translateY(0)";
+      }
+    });
+  },
+  { threshold: 0.1, rootMargin: "0px 0px -50px 0px" }
+);
+
+document.addEventListener("DOMContentLoaded", () => {
+  const items = document.querySelectorAll(
+    ".project-card, .skill-category, .timeline-item"
+  );
+
+  items.forEach((el) => {
+    el.style.opacity = "0";
+    el.style.transform = "translateY(30px)";
+    el.style.transition = "opacity 0.6s ease, transform 0.6s ease";
+    observer.observe(el);
+  });
+});
+
+// Typing Effect
+document.addEventListener("DOMContentLoaded", () => {
+  const desc = document.querySelector(".hero-description p");
+  const text = desc.textContent;
+  desc.textContent = "";
+
+  let i = 0;
+  const type = () => {
+    if (i < text.length) {
+      desc.textContent += text.charAt(i);
+      i++;
+      setTimeout(type, 30);
+    }
+  };
+
+  setTimeout(type, 800);
+});
+
+// Parallax Effect
+window.addEventListener("scroll", () => {
+  const parallax = document.querySelector(".hero");
+  if (parallax) {
+    parallax.style.transform = `translateY(${window.pageYOffset * 0.5}px)`;
+  }
+});
+
+// Hover and Ripple Effects
+document.addEventListener("DOMContentLoaded", () => {
+  // Project card hover
+  document.querySelectorAll(".project-card").forEach((card) => {
+    card.addEventListener("mouseenter", () => {
+      card.style.transform = "translateY(-8px) scale(1.02)";
+    });
+    card.addEventListener("mouseleave", () => {
+      card.style.transform = "translateY(0) scale(1)";
+    });
+  });
+
+  // Ripple effect
+  document.querySelectorAll(".btn-primary, .btn-secondary, .btn-email").forEach((btn) => {
+    btn.addEventListener("click", function (e) {
+      const ripple = document.createElement("span");
+      const rect = this.getBoundingClientRect();
+      const size = Math.max(rect.width, rect.height);
+      ripple.style.width = ripple.style.height = size + "px";
+      ripple.style.left = e.clientX - rect.left - size / 2 + "px";
+      ripple.style.top = e.clientY - rect.top - size / 2 + "px";
+      ripple.classList.add("ripple");
+      this.appendChild(ripple);
+      setTimeout(() => ripple.remove(), 600);
+    });
+  });
+});
+
+// Ripple and Notification CSS Injection
+
+const style = document.createElement("style");
+style.textContent = `
+  .btn-primary, .btn-secondary, .btn-email { position: relative; overflow: hidden; }
+  .ripple { position: absolute; border-radius: 50%; background: rgba(255,255,255,0.3); transform: scale(0); animation: ripple 0.6s linear; pointer-events:none; }
+  @keyframes ripple { to { transform: scale(4); opacity: 0; } }
+
+  .notification {
+    position: fixed; top: 20px; right: 20px;
+    background: var(--card-bg); border: 1px solid var(--border-color);
+    border-left: 4px solid var(--accent-color);
+    padding: 15px 20px; border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+    opacity: 0; transform: translateX(100%);
+    transition: all 0.3s ease; z-index: 10000;
+  }
+  .notification.show { opacity: 1; transform: translateX(0); }
+  .notification-success { border-left-color: #10b981; }
+`;
+document.head.appendChild(style);
