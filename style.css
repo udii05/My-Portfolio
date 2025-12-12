@@ -1,28 +1,21 @@
-/* ----------------------------------------------------
-   FINAL LAVENDER THEME – CLEANED & CONSOLIDATED
-   Option A: Dark background + Lavender accent UI
-   ---------------------------------------------------- */
+/* Lavender Theme UI */
 
-/* ---------------------------
-   ROOT THEME TOKENS
----------------------------- */
 :root {
-  /* Core Lavender Palette */
-  --lav-900: #0f0f12; /* main background */
+  --lav-900: #0f0f12;
   --lav-880: #1A1720;
-  --lav-800: #2A1E38; /* deep lavender charcoal */
-  --lav-700: #4A3461; /* heavy lavender */
-  --lav-600: #7C58A3; /* primary accent */
-  --lav-500: #9678B6; /* hover accent */
-  --lav-400: #B099C8; /* borders, soft lines */
-  --lav-300: #C9BADA; /* subtle UI tints */
+  --lav-800: #2A1E38;
+  --lav-700: #4A3461;
+  --lav-600: #7C58A3;
+  --lav-500: #9678B6;
+  --lav-400: #B099C8; 
+  --lav-300: #C9BADA;
   --lav-200: #E3DBEC;
   --text-light: #F3EDF8;
   --text-muted: #BDAED4;
 
-  /* Semantic Tokens */
+  /* Tokens */
   --color-background: var(--lav-900);
-  --color-surface: #141217; /* card surfaces */
+  --color-surface: #141217;
   --color-text: var(--text-light);
   --color-text-secondary: var(--text-muted);
 
@@ -33,7 +26,6 @@
   --color-btn-primary-text: var(--text-light);
   --focus-ring: rgba(124, 88, 163, 0.22);
 
-  /* Accent Gradient */
   --accent-gradient: linear-gradient(
     135deg,
     var(--lav-600),
@@ -92,9 +84,6 @@
   --container-xl: 1280px;
 }
 
-/* -------------------------------------------
-   BASE + GLOBAL
--------------------------------------------- */
 *,
 *::before,
 *::after { box-sizing: border-box; }
@@ -111,7 +100,7 @@ body {
   background: var(--color-background);
   color: var(--color-text);
 
-  /* Lavender haze replacing teal glow */
+  /* Lavender haze */
   background-image:
     radial-gradient(circle at 20% 80%, rgba(124,88,163,0.05), transparent 40%),
     radial-gradient(circle at 80% 20%, rgba(150,120,182,0.04), transparent 40%);
@@ -151,9 +140,7 @@ p { margin-bottom: var(--space-16); color: var(--color-text-secondary); }
   border-radius: var(--radius-sm);
 }
 
-/* -------------------------------------------
-   NAVBAR
--------------------------------------------- */
+/* Navbar */
 .navbar {
   position: fixed;
   top: 0;
@@ -212,9 +199,7 @@ p { margin-bottom: var(--space-16); color: var(--color-text-secondary); }
   width: 100%;
 }
 
-/* -------------------------------------------
-   HERO SECTION
--------------------------------------------- */
+/* Hero Section */
 .hero {
   min-height: 100vh;
   display: flex;
@@ -257,9 +242,7 @@ p { margin-bottom: var(--space-16); color: var(--color-text-secondary); }
   font-size: var(--font-size-sm);
 }
 
-/* -------------------------------------------
-   BUTTONS
--------------------------------------------- */
+/* Buttons */
 .btn-primary,
 .btn-secondary {
   padding: var(--space-16) var(--space-32);
@@ -292,9 +275,7 @@ p { margin-bottom: var(--space-16); color: var(--color-text-secondary); }
   color: var(--color-btn-primary-text);
 }
 
-/* -------------------------------------------
-   ABOUT SECTION
--------------------------------------------- */
+/* ABOUT Section */
 .about {
   padding: 120px 0;
   background: var(--color-surface);
@@ -341,9 +322,7 @@ p { margin-bottom: var(--space-16); color: var(--color-text-secondary); }
   background: var(--accent-gradient);
 }
 
-/* -------------------------------------------
-   SKILLS SECTION
--------------------------------------------- */
+/* SKILLS Section */
 .skills {
   padding: 120px 0;
 }
@@ -382,9 +361,7 @@ p { margin-bottom: var(--space-16); color: var(--color-text-secondary); }
   color: var(--color-primary);
 }
 
-/* -------------------------------------------
-   PROJECTS SECTION
--------------------------------------------- */
+/* PROJECTS Section */
 .projects {
   padding: 120px 0;
   background: var(--color-surface);
@@ -431,9 +408,7 @@ p { margin-bottom: var(--space-16); color: var(--color-text-secondary); }
   font-weight: var(--font-weight-semibold);
 }
 
-/* -------------------------------------------
-   EXPERIENCE SECTION
--------------------------------------------- */
+/* EXPERIENCE Section */
 .experience {
   padding: 120px 0;
 }
@@ -468,9 +443,7 @@ p { margin-bottom: var(--space-16); color: var(--color-text-secondary); }
   border-radius: 50%;
 }
 
-/* -------------------------------------------
-   CONTACT SECTION
--------------------------------------------- */
+/* CONTACT Section */
 .contact {
   padding: 120px 0;
   background: var(--color-surface);
@@ -520,9 +493,7 @@ p { margin-bottom: var(--space-16); color: var(--color-text-secondary); }
   box-shadow: var(--shadow-lg);
 }
 
-/* -------------------------------------------
-   FOOTER (Solid deep lavender)
--------------------------------------------- */
+/* Footer */
 .footer {
   background: var(--lav-800);
   padding: 2rem 0;
@@ -559,9 +530,7 @@ p { margin-bottom: var(--space-16); color: var(--color-text-secondary); }
   transform: scale(1.12);
 }
 
-/* -------------------------------------------
-   RESPONSIVE
--------------------------------------------- */
+/* Responsive Design */
 @media (max-width: 768px) {
   .hero-container,
   .about-content,
@@ -576,4 +545,3 @@ p { margin-bottom: var(--space-16); color: var(--color-text-secondary); }
     display: none;
   }
 }
-
