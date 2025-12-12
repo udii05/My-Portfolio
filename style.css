@@ -545,3 +545,35 @@ p { margin-bottom: var(--space-16); color: var(--color-text-secondary); }
     display: none;
   }
 }
+
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 140px 0 80px;
+  position: relative;
+}
+
+.hero-container {
+  max-width: 1250px;
+  margin: 0 auto;
+  padding: 0 var(--space-20);
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+/* Block Width */
+.hero-description p {
+  max-width: 520px;
+}
+
+/* Radial background */
+.hero {
+  background-image:
+    radial-gradient(circle at 30% 30%, rgba(124, 88, 163, 0.12) 0%, transparent 50%),
+    radial-gradient(circle at 70% 70%, rgba(150, 120, 182, 0.10) 0%, transparent 55%);
+  background-repeat: no-repeat;
+}
