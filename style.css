@@ -12,6 +12,15 @@
   --color-charcoal-700: rgba(31, 33, 33, 1);
   --color-charcoal-800: rgba(38, 40, 40, 1);
   --color-slate-900: rgba(19, 52, 59, 1);
+  --color-teal-300: var(--lav-400);
+  --color-teal-400: var(--lav-500);
+  --color-teal-500: var(--lav-600);
+  --color-teal-600: var(--lav-500);
+  --color-teal-700: var(--lav-600);
+  --color-teal-800: var(--lav-700);
+  --color-teal-500-rgb: 124, 88, 163;
+  --color-teal-400-rgb: 150, 120, 182;
+/*
   --color-teal-300: rgba(50, 184, 198, 1);
   --color-teal-400: rgba(45, 166, 178, 1);
   --color-teal-500: rgba(33, 128, 141, 1);
@@ -21,7 +30,7 @@
   --color-red-400: rgba(255, 84, 89, 1);
   --color-red-500: rgba(192, 21, 47, 1);
   --color-orange-400: rgba(230, 129, 97, 1);
-  --color-orange-500: rgba(168, 75, 47, 1);
+  --color-orange-500: rgba(168, 75, 47, 1); */
 
   /* RGB versions for opacity control */
   --color-brown-600-rgb: 94, 82, 64;
