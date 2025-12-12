@@ -154,22 +154,17 @@ p { margin-bottom: var(--space-16); color: var(--color-text-secondary); }
 
 .nav-container {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-}
-
-.nav-logo span {
-  font-size: 1.8rem;
-  font-weight: 800;
-  background: var(--accent-gradient);
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
+  width: 100%;
 }
 
 .nav-menu {
   display: flex;
   list-style: none;
   gap: 2rem;
+  margin: 0 !important;
+  padding: 0;
 }
 
 .nav-link {
