@@ -713,3 +713,38 @@ select.form-control {
     display: none;
   }
 }
+
+/* Centered Hero Header */
+
+.hero-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: var(--space-32);
+}
+
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hero-description p {
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+.hero-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-16);
+}
+
+.hero-actions {
+  display: flex;
+  gap: var(--space-16);
+  justify-content: center;
+  flex-wrap: wrap;
+}
