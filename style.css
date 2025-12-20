@@ -389,7 +389,7 @@ select.form-control {
 }
 
 .hero-name {
-  font-size: var(--font-size-4xl);
+  font-size: 56px;
   font-weight: var(--font-weight-bold);
   background: linear-gradient(135deg, var(--lav-200), var(--lav-500));
   -webkit-background-clip: text;
