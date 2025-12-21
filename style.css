@@ -737,3 +737,13 @@ select.form-control {
   justify-content: center;
   flex-wrap: wrap;
 }
+
+.btn-primary,
+.btn-primary:hover,
+.btn-primary:active,
+.btn-primary:focus,
+.btn-primary:focus-visible {
+  box-shadow: 0 0 22px rgba(150, 120, 182, 0.55) !important;
+  outline: none !important;
+  filter: none !important;
+}
