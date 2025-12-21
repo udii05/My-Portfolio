@@ -388,6 +388,15 @@ select.form-control {
   margin-bottom: var(--space-32);
 }
 
+.skills-label {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-semibold);
+  color: var(--lav-400);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 16px;
+}
+
 /* Hero Description */
 .hero-description p {
   font-size: var(--font-size-lg);
@@ -452,14 +461,43 @@ select.form-control {
   gap: var(--space-32);
 }
 
+.about-text p {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  margin-bottom: 24px;
+}
+
+.skills-header {
+  text-align: center;
+  margin-bottom: 64px;
+}
+
 /* Contact Info card */
 .contact-info {
   background: var(--color-surface);
-  padding: var(--space-24);
+  padding: 32px;
   border-radius: var(--radius-lg);
   border: 1px solid var(--color-card-border);
   box-shadow: var(--shadow-sm);
-  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 18px;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.contact-item i {
+  color: var(--lav-400);
+  font-size: 1.1rem;
+}
+
+.contact-item:hover i {
+  color: var(--lav-300);
 }
 
 .contact-info::before {
@@ -760,4 +798,13 @@ section {
   position: relative;
   z-index: 1;
   padding: 120px 0;
+}
+
+.skills-title {
+  font-size: 36px;
+  font-weight: var(--font-weight-bold);
+  background: linear-gradient(135deg, var(--lav-200), var(--lav-500));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 40px;
 }
