@@ -360,7 +360,10 @@ select.form-control {
   min-height: 100vh;
   display: flex;
   align-items: center;
+  justify-content: center;
+  position: relative;
   padding-top: 120px;
+  padding-bottom: 120px;
 
   background-image:
     radial-gradient(circle at 30% 30%, rgba(var(--color-teal-500-rgb), 0.12), transparent 55%),
