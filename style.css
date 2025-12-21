@@ -338,8 +338,8 @@ select.form-control {
 }
 
 .btn-primary:hover {
-  transform: translateY(-3px);
-  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+  box-shadow: 0 0 26px rgba(150, 120, 182, 0.65);
 }
 
 /* Outline Button */
