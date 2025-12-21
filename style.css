@@ -747,3 +747,9 @@ select.form-control {
   outline: none !important;
   filter: none !important;
 }
+
+.btn-primary:focus,
+.btn-primary:focus-visible {
+  outline: none !important;
+  outline-offset: 0 !important;
+}
