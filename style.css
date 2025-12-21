@@ -753,3 +753,11 @@ select.form-control {
   outline: none !important;
   outline-offset: 0 !important;
 }
+
+.btn-primary {
+  border: none !important;
+  outline: none !important;
+  appearance: none !important;
+  -webkit-appearance: none !important;
+  background-clip: padding-box;
+}
