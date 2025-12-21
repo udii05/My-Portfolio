@@ -25,8 +25,8 @@
   --color-card-border: rgba(186,153,200,0.15);
   --color-btn-primary-text: #ffffff;
 
-  --color-teal-500-rgb: 124, 88, 163; /* lav-600 */
-  --color-teal-400-rgb: 150, 120, 182; /* lav-500 */
+  --color-teal-500-rgb: 124, 88, 163;
+  --color-teal-400-rgb: 150, 120, 182;
 
   /* Gradients */
   --accent-gradient: linear-gradient(
@@ -215,7 +215,6 @@ pre code {
   clip: rect(0, 0, 0, 0);
 }
 
-/* Focus Ring */
 :focus-visible {
   outline: 2px solid var(--color-primary);
   outline-offset: 3px;
@@ -303,7 +302,6 @@ select.form-control {
   color: var(--color-primary);
 }
 
-/* Underline animation */
 .nav-link::after {
   content: "";
   position: absolute;
@@ -321,7 +319,6 @@ select.form-control {
 }
 
 /* Buttons */
-
 .btn-primary,
 .btn-secondary {
   padding: var(--space-16) var(--space-32);
@@ -336,7 +333,8 @@ select.form-control {
 .btn-primary {
   background: linear-gradient(135deg, var(--lav-600), var(--lav-500));
   color: var(--color-btn-primary-text);
-  box-shadow: var(--shadow-sm);
+  box-shadow: 0 0 18px rgba(150, 120, 182, 0.45);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .btn-primary:hover {
@@ -358,7 +356,6 @@ select.form-control {
 }
 
 /* Hero Section */
-
 .hero {
   min-height: 100vh;
   display: flex;
@@ -406,7 +403,6 @@ select.form-control {
 }
 
 /* Scroll Indicator */
-
 .scroll-indicator {
   margin-top: var(--space-32);
   display: flex;
@@ -433,7 +429,6 @@ select.form-control {
 }
 
 /* About Section */
-
 .about {
   padding: 120px 0;
   background: var(--color-surface);
@@ -483,7 +478,6 @@ select.form-control {
 }
 
 /* Skills Section */
-
 .skills {
   padding: 120px 0;
 }
@@ -523,7 +517,6 @@ select.form-control {
 }
 
 /* Projects Section */
-
 .projects {
   padding: 120px 0;
   background: var(--color-surface);
@@ -572,7 +565,6 @@ select.form-control {
 }
 
 /* Experience Section */
-
 .experience {
   padding: 120px 0;
 }
@@ -610,7 +602,6 @@ select.form-control {
 }
 
 /* Contact Section */
-
 .contact {
   padding: 120px 0;
   background: var(--color-surface);
@@ -661,7 +652,6 @@ select.form-control {
 }
 
 /* Footer */
-
 .footer {
   background: var(--lav-800);
   padding: 2rem 0;
@@ -715,7 +705,6 @@ select.form-control {
 }
 
 /* Centered Hero Header */
-
 .hero-container {
   display: flex;
   flex-direction: column;
