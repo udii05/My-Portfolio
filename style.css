@@ -370,15 +370,6 @@ select.form-control {
     radial-gradient(circle at 70% 70%, rgba(var(--color-teal-400-rgb), 0.10), transparent 55%);
 }
 
-.hero-container {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: var(--space-32);
-  max-width: var(--container-xl);
-  margin: 0 auto;
-  padding: 0 var(--space-20);
-}
-
 .hero-greeting {
   font-size: var(--font-size-lg);
   font-weight: var(--font-weight-semibold);
