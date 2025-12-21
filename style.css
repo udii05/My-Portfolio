@@ -254,12 +254,11 @@ select.form-control {
   position: fixed;
   top: 0;
   width: 100%;
-  background: rgba(20, 15, 30, 0.85);
+  background: rgba(20, 15, 30, 0.9);
   backdrop-filter: blur(20px);
-  border-bottom: 1px solid var(--color-border);
+  border-bottom: none;
   padding: 1rem 0;
   z-index: 1000;
-  transition: background 0.3s ease, box-shadow 0.3s ease;
 }
 
 .navbar.scrolled {
