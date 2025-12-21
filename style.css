@@ -764,3 +764,9 @@ select.form-control {
   -webkit-appearance: none !important;
   background-clip: padding-box;
 }
+
+section {
+  position: relative;
+  z-index: 1;
+  padding: 120px 0;
+}
