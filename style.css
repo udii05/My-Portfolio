@@ -434,7 +434,11 @@ select.form-control {
 /* About Section */
 .about {
   padding: 120px 0;
-  background: var(--color-surface);
+  background: linear-gradient(
+    180deg,
+    var(--color-background),
+    var(--color-surface) 40%
+  );
 }
 
 .section-header {
@@ -807,4 +811,9 @@ section {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   margin-bottom: 40px;
+}
+
+section::before,
+section::after {
+  content: none !important;
 }
