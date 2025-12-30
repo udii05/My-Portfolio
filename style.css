@@ -461,7 +461,8 @@ select.form-control {
 .about-content {
   display: grid;
   grid-template-columns: 2fr 1fr;
-  gap: var(--space-32);
+  gap: 28px;
+  align-items: stretch;
 }
 
 .about-text p {
@@ -478,20 +479,23 @@ select.form-control {
 /* Contact Info card */
 .contact-info {
   background: var(--color-surface);
-  padding: 32px;
+  padding: 24px 28px;
   border-radius: var(--radius-lg);
   border: 1px solid var(--color-card-border);
   box-shadow: var(--shadow-sm);
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  gap: 18px;
+  justify-content: flex-start;
+  gap: 16px;
+  position: relative;
+  height: fit-content;
 }
 
 .contact-item {
   display: flex;
   align-items: center;
   gap: 14px;
+  line-height: 1.4;
 }
 
 .contact-item i {
@@ -507,9 +511,15 @@ select.form-control {
   content: "";
   position: absolute;
   top: 0;
-  left: 0; right: 0;
-  height: 3px;
-  background: linear-gradient(135deg, var(--lav-600), var(--lav-400));
+  left: 0;
+  right: 0;
+  height: 5px;
+  background: linear-gradient(
+    90deg,
+    var(--lav-600),
+    var(--lav-400)
+  );
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
 }
 
 /* Skills Section */
