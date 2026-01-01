@@ -486,7 +486,7 @@ select.form-control {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  gap: 16px;
+  gap: 30px;
   position: relative;
   height: fit-content;
 }
@@ -525,6 +525,7 @@ select.form-control {
 /* Skills Section */
 .skills {
   padding: 120px 0;
+  background: var(--color-surface);
 }
 
 .skills-grid {
@@ -534,7 +535,7 @@ select.form-control {
 }
 
 .skill-category {
-  background: var(--color-surface);
+  background: var(--color-background);
   border: 1px solid var(--color-card-border);
   border-radius: var(--radius-lg);
   padding: var(--space-24);
@@ -554,11 +555,28 @@ select.form-control {
   padding-left: var(--space-24);
 }
 
+.skill-category ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.skill-category li {
+  padding: var(--space-12) 0;
+  border-bottom: 1px solid var(--color-border);
+  color: var(--color-text-secondary);
+  position: relative;
+  padding-left: 20px;
+}
+
 .skill-category li::before {
-  content: "✦";
+  content: "▶";
   position: absolute;
   left: 0;
-  color: var(--lav-500);
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--lav-400);
+  font-size: 0.7rem;
 }
 
 /* Projects Section */
